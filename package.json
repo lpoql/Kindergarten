@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "jest --collect-coverage"
+    "test": "jest --collect-coverage",
+    "prettier": "prettier --write {**/*,*}.{js,ts}",
+    "prettier-check": "prettier --check {**/*,*}.{js,ts}"
   },
   "dependencies": {
     "@types/node": "18.11.18",
@@ -16,6 +18,7 @@
     "@jest/globals": "^29.3.1",
     "@types/jest": "^29.2.5",
     "jest": "^29.3.1",
+    "prettier": "2.8.1",
     "ts-jest": "^29.0.3"
   }
 }
