@@ -36,7 +36,7 @@ export default class QueueStruct<T> implements QueueProps<T> {
 
     enqueue(element: T) {
         if (this.head === this.tail + 1) {
-            // append elements causes the queue to underflow
+            // append elements causes the queue to overflow
             return undefined
         }
         this.Q.set(this.tail, element)
