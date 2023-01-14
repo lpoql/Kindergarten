@@ -11,7 +11,7 @@
  * peek: return the first element of the queue
  * */
 
-interface QueueProps<T> {
+interface props<T> {
     enqueue(element: T): void | undefined;
 
     dequeue(): T | undefined;
@@ -23,15 +23,15 @@ interface QueueProps<T> {
     peek(): T | null;
 }
 
-export default class QueueStruct<T> implements QueueProps<T> {
+export default class QueueStruct<T> implements props<T> {
     private head: number;
     private tail: number;
-    private readonly Q: Map<number, T>;
+    private readonly itmes: Map<number, T>;
 
     constructor() {
         this.head = 0;
         this.tail = 0;
-        this.Q = new Map();
+        this.itmes = new Map();
     }
 
     enqueue(element: T) {
@@ -39,7 +39,7 @@ export default class QueueStruct<T> implements QueueProps<T> {
             // append elements causes the queue to overflow
             return undefined
         }
-        this.Q.set(this.tail, element)
+        this.itmes.set(this.tail, element)
         this.tail++
     }
 
@@ -48,14 +48,14 @@ export default class QueueStruct<T> implements QueueProps<T> {
             // The queue is empty, deleting elements causes the queue to underflow
             return undefined
         }
-        this.Q.delete(this.head)
+        this.itmes.delete(this.head)
         this.head++
-        return this.Q.get(this.head)
+        return this.itmes.get(this.head)
     }
 
     peek(): T | null {
         if (this.head) {
-            return this.Q.get(this.head) as T
+            return this.itmes.get(this.head) as T
         }
         return null;
     }
@@ -65,7 +65,7 @@ export default class QueueStruct<T> implements QueueProps<T> {
     }
 
     size(): number {
-        return this.Q.size;
+        return this.itmes.size;
     }
 
 }

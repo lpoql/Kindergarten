@@ -15,27 +15,27 @@ interface stackProps<T> {
 }
 
 export default class StackStruct<T> implements stackProps<T> {
-    private readonly S: T[] = []; // init stack
+    private readonly s: T[] = []; // init stack
 
     constructor(stack?: T[]) {
         if (stack && stack.length > 0) {
-            this.S = stack
+            this.s = stack
         }
     }
 
     push(ele: T) {
-        this.S.push(ele);
-        return this.S;
+        this.s.push(ele);
+        return this.s;
     }
 
     pop(): T[] | undefined {
-        if (this.S.length !== 0) {
-            this.S.pop();
+        if (this.s.length !== 0) {
+            this.s.pop();
         }
-        return this.S;
+        return this.s;
     }
 
     size(): number {
-        return this.S.length;
+        return this.s.length;
     }
 }
