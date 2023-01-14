@@ -1,4 +1,4 @@
-import QueueStruct from "./queue";
+import QueueStruct from "../queue";
 
 const queue = new QueueStruct()
 
