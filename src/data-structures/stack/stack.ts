@@ -7,35 +7,35 @@
  * */
 
 interface stackProps<T> {
-    pop(): T[] | undefined;
+  pop(): T[] | undefined;
 
-    push(element: T): void;
+  push(element: T): void;
 
-    size(): number;
+  size(): number;
 }
 
 export default class StackStruct<T> implements stackProps<T> {
-    private readonly S: T[] = []; // init stack
+  private readonly s: T[] = []; // init stack
 
-    constructor(stack?: T[]) {
-        if (stack && stack.length > 0) {
-            this.S = stack
-        }
+  constructor(stack?: T[]) {
+    if (stack && stack.length > 0) {
+      this.s = stack;
     }
+  }
 
-    push(ele: T) {
-        this.S.push(ele);
-        return this.S;
-    }
+  push(ele: T) {
+    this.s.push(ele);
+    return this.s;
+  }
 
-    pop(): T[] | undefined {
-        if (this.S.length !== 0) {
-            this.S.pop();
-        }
-        return this.S;
+  pop(): T[] | undefined {
+    if (this.s.length !== 0) {
+      this.s.pop();
     }
+    return this.s;
+  }
 
-    size(): number {
-        return this.S.length;
-    }
+  size(): number {
+    return this.s.length;
+  }
 }

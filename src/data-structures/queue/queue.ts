@@ -11,61 +11,60 @@
  * peek: return the first element of the queue
  * */
 
-interface QueueProps<T> {
-    enqueue(element: T): void | undefined;
+interface props<T> {
+  enqueue(element: T): void | undefined;
 
-    dequeue(): T | undefined;
+  dequeue(): T | undefined;
 
-    size(): number;
+  size(): number;
 
-    isEmpty(): boolean;
+  isEmpty(): boolean;
 
-    peek(): T | null;
+  peek(): T | null;
 }
 
-export default class QueueStruct<T> implements QueueProps<T> {
-    private head: number;
-    private tail: number;
-    private readonly Q: Map<number, T>;
+export default class QueueStruct<T> implements props<T> {
+  private head: number;
+  private tail: number;
+  private readonly itmes: Map<number, T>;
 
-    constructor() {
-        this.head = 0;
-        this.tail = 0;
-        this.Q = new Map();
+  constructor() {
+    this.head = 0;
+    this.tail = 0;
+    this.itmes = new Map();
+  }
+
+  enqueue(element: T) {
+    if (this.head === this.tail + 1) {
+      // append elements causes the queue to overflow
+      return undefined;
     }
+    this.itmes.set(this.tail, element);
+    this.tail++;
+  }
 
-    enqueue(element: T) {
-        if (this.head === this.tail + 1) {
-            // append elements causes the queue to underflow
-            return undefined
-        }
-        this.Q.set(this.tail, element)
-        this.tail++
+  dequeue(): T | undefined {
+    if (this.head === this.tail) {
+      // The queue is empty, deleting elements causes the queue to underflow
+      return undefined;
     }
+    this.itmes.delete(this.head);
+    this.head++;
+    return this.itmes.get(this.head);
+  }
 
-    dequeue(): T | undefined {
-        if (this.head === this.tail) {
-            // The queue is empty, deleting elements causes the queue to underflow
-            return undefined
-        }
-        this.Q.delete(this.head)
-        this.head++
-        return this.Q.get(this.head)
+  peek(): T | null {
+    if (this.head) {
+      return this.itmes.get(this.head) as T;
     }
+    return null;
+  }
 
-    peek(): T | null {
-        if (this.head) {
-            return this.Q.get(this.head) as T
-        }
-        return null;
-    }
+  isEmpty(): boolean {
+    return this.head === this.tail;
+  }
 
-    isEmpty(): boolean {
-        return this.head === this.tail;
-    }
-
-    size(): number {
-        return this.Q.size;
-    }
-
+  size(): number {
+    return this.itmes.size;
+  }
 }
