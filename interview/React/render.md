@@ -18,4 +18,4 @@
 - 渲染界面
 
 ### React diff 原理了解多少？
-
+[参考](https://zhuanlan.zhihu.com/p/20346379)
