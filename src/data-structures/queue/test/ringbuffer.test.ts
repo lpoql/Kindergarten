@@ -1,5 +1,5 @@
 import RB from '../ringbuffer';
-import {read} from "fs";
+import { read } from 'fs';
 
 describe('RingBuffer', () => {
   it('', function () {
@@ -14,16 +14,16 @@ describe('RingBuffer', () => {
     }
     expect(rb.singleWrite(5)).toEqual(false);
 
-    expect(rb.read(5)).toStrictEqual([ 1, 2, 3,4]);
+    expect(rb.read(5)).toStrictEqual([1, 2, 3, 4]);
   });
 
   it('read option boundary case', () => {
-    let err:unknown
+    let err: unknown;
     try {
       const rb = new RB(0);
-      rb.read(1)
-    }catch (e) {
-      err = e
+      rb.read(1);
+    } catch (e) {
+      err = e;
     }
     expect(err).toEqual(Error('params is not valid'));
   });

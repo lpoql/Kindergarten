@@ -12,62 +12,62 @@
  * */
 
 interface props<T> {
-    enqueue(element: T): void | undefined;
+  enqueue(element: T): void | undefined;
 
-    dequeue(): T | undefined | null;
+  dequeue(): T | undefined | null;
 
-    size(): number;
+  size(): number;
 
-    isEmpty(): boolean;
+  isEmpty(): boolean;
 
-    peek(): T | null;
+  peek(): T | null;
 }
 
 export default class QueueStruct<T> implements props<T> {
-    private head: number;
-    private tail: number;
-    private readonly items: Map<number, T | null>;
+  private head: number;
+  private tail: number;
+  private readonly items: Map<number, T | null>;
 
-    constructor() {
-        this.head = 0;
-        this.tail = 0;
-        this.items = new Map();
-    }
+  constructor() {
+    this.head = 0;
+    this.tail = 0;
+    this.items = new Map();
+  }
 
-    enqueue(element: T): undefined | void {
-        if (this.head === this.tail + 1) {
-            // append elements causes the queue to overflow
-            return undefined;
-        }
-        this.items.set(this.tail, element); // storage element
-        this.items.set(this.tail + 1, null); // apply for memory
-        this.tail++;
+  enqueue(element: T): undefined | void {
+    if (this.head === this.tail + 1) {
+      // append elements causes the queue to overflow
+      return undefined;
     }
+    this.items.set(this.tail, element); // storage element
+    this.items.set(this.tail + 1, null); // apply for memory
+    this.tail++;
+  }
 
-    dequeue(): T | undefined | null {
-        let header: T | null = null
-        if (this.head === this.tail) {
-            // The queue is empty, deleting elements causes the queue to underflow
-            return undefined;
-        }
-        header = this.items.get(this.head) as T
-        this.items.delete(this.head);
-        this.head++;
-        return header;
+  dequeue(): T | undefined | null {
+    let header: T | null = null;
+    if (this.head === this.tail) {
+      // The queue is empty, deleting elements causes the queue to underflow
+      return undefined;
     }
+    header = this.items.get(this.head) as T;
+    this.items.delete(this.head);
+    this.head++;
+    return header;
+  }
 
-    peek(): T | null {
-        if (this.size()) {
-            return this.items.get(this.head) as T;
-        }
-        return null;
+  peek(): T | null {
+    if (this.size()) {
+      return this.items.get(this.head) as T;
     }
+    return null;
+  }
 
-    isEmpty(): boolean {
-        return this.head === this.tail;
-    }
+  isEmpty(): boolean {
+    return this.head === this.tail;
+  }
 
-    size(): number {
-        return this.items.size;
-    }
+  size(): number {
+    return this.items.size;
+  }
 }
