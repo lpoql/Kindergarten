@@ -7,5 +7,5 @@ If you have any suggestion about it, truly hope your pull request, <strong>all y
 
 - #### 🍕 [algorithms](https://github.com/lpoql/Kindergarten/tree/main/src/algorithms)
 - #### 🍟 [data structures](https://github.com/lpoql/Kindergarten/tree/main/src/data-structures)
-- #### 🥙 [interview](https://github.com/lpoql/Kindergarten/tree/main/src/interview)
+- #### 🥙 [interview](https://github.com/lpoql/Kindergarten/tree/main/interview)
 
