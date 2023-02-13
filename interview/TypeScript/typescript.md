@@ -31,4 +31,14 @@ TypeScript 是 JavaScript 的类型超集，这意味着任何 JavaScript 代码
 ### interface 和 类型别名的区别？
 
 ### 强类型、弱类型、静态类型、动态类型区别？
+- 强类型/弱类型：语言是否尝试进行类型的隐式转换
+- 静态类型：编译过程中检查值的类型（代码执行前）
+- 动态类型：执行过程中检查值的类型
 
+> 举例：JavaScript 会在运行中根据值来推断类型，而且我们熟知 JavaScript 中是可以进行字符串及数字的基本运算操作的 `例如："3" + 1`，故 JavaScript 是动态弱类型。<br>
+> TypeScript 在声明前就已经指明了类型，但可以通过类型断言，且在编译器上可以实时看到报错信息，故 TypeScript 是静态弱类型。
+
+```typescript
+const num:number = 19
+const str = (num as unknown as string).split('')
+```
