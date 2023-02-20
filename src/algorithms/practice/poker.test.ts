@@ -18,6 +18,6 @@ describe('', () => {
   });
 
   it('Three of a Kind and pair', function () {
-    expect(bestHand([1,1,1,2,2], ["a","b","c","a","d"])).toBe('Three of a Kind');
+    expect(bestHand([1, 1, 1, 2, 2], ['a', 'b', 'c', 'a', 'd'])).toBe('Three of a Kind');
   });
 });
