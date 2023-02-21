@@ -23,6 +23,7 @@ sessionStorage:
 ***
 HTTP Cookie:
 - 分会话期 Cookie 和持久性 Cookie (Expires 字段指定)
-- 大小 4kb
+- 大小 4kb（依浏览器而定）
 - 每次 HTTP 请求中都会携带
 
+_关于 cookie 看参考本人博客[Cookie 支持](https://yaqf.x2ox.com/2023/cookies_support.html)_
