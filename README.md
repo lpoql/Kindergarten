@@ -6,6 +6,7 @@ If you have any suggestion about it, truly hope your pull request, <strong>all y
 ### Notes List
 
 - #### 🍕 [algorithms](https://github.com/lpoql/Kindergarten/tree/main/src/algorithms)
+    - #### [Leetcode daily practice](https://github.com/lpoql/Kindergarten/tree/main/src/algorithms/practice)
 - #### 🍟 [data structures](https://github.com/lpoql/Kindergarten/tree/main/src/data-structures)
 - #### 🥙 [interview](https://github.com/lpoql/Kindergarten/tree/main/interview)
 
