@@ -1,4 +1,4 @@
-import { numberOfPairs } from './pairs';
+import { numberOfPairs } from '../pairs';
 
 describe('number of pairs', () => {
   it('entry array has only one element', function () {

@@ -1,4 +1,4 @@
-import { bestHand } from './poker';
+import { bestHand } from '../poker';
 
 describe('', () => {
   it('Flush', function () {
