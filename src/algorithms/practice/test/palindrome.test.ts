@@ -1,4 +1,4 @@
-import { longestPalindrome } from '../palindrome';
+import {isPalindrome, longestPalindrome} from '../palindrome';
 
 describe('Test example of longest palindrome', () => {
   it('test example of "bb"', () => {
@@ -17,3 +17,17 @@ describe('Test example of longest palindrome', () => {
     expect(longestPalindrome('abacac')).toBe('aba');
   });
 });
+
+describe('Test example ',()=>{
+  it('test example of 121',()=>{
+    expect(isPalindrome(121)).toBeTruthy()
+  })
+
+  it('test example of -121',()=>{
+    expect(isPalindrome(-121)).toBeFalsy()
+  })
+
+  it('test example of 10',()=>{
+    expect(isPalindrome(10)).toBeFalsy()
+  })
+})
