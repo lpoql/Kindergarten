@@ -1,32 +1,32 @@
 /*
-* example: "babad"
-* longest: "bab" or "aba"
-* */
+ * example: "babad"
+ * longest: "bab" or "aba"
+ * */
 
 export function longestPalindrome(str: string) {
-    let longest = ''
-    if (str.length < 2) return str
+  let longest = '';
+  if (str.length < 2) return str;
 
-    for (let i = 0; i < str.length; i++) {
-        // odd
-        check(i, i)
-        // even
-        check(i, i + 1)
+  for (let i = 0; i < str.length; i++) {
+    // odd
+    check(i, i);
+    // even
+    check(i, i + 1);
+  }
+
+  function check(start: number, end: number) {
+    while (end < str.length && start >= 0) {
+      if (str[start] == str[end]) {
+        end++;
+        start--;
+      } else {
+        break;
+      }
     }
-
-    function check(start: number, end: number) {
-        while (end < str.length && start >= 0) {
-            if (str[start] == str[end]) {
-                end++
-                start--
-            } else {
-                break
-            }
-        }
-        if (end - start - 1 > longest.length) {
-            longest = str.slice(start + 1, end)
-        }
+    if (end - start - 1 > longest.length) {
+      longest = str.slice(start + 1, end);
     }
+  }
 
-    return longest
+  return longest;
 }
