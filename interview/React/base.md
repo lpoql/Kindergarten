@@ -38,7 +38,7 @@ React 可以通过 `ReactDOM.render(<p>Hello</p>, document.getElementById('root'
 函数式组件：
 
 - 函数式声明，组件内部数据可通过函数传参形式注入 `props`，返回 React 元素，本质上就是 JavaScript 函数
-- 无生命周期，无状态，用完
+- 无生命周期，无状态，用完销毁
 
   [参考](https://github.com/jappp/Blog/issues/12)
   [官方](https://reactjs.org/docs/components-and-props.html)<br>
@@ -52,7 +52,7 @@ React 可以通过 `ReactDOM.render(<p>Hello</p>, document.getElementById('root'
 [PureComponent](https://beta.reactjs.org/reference/react/PureComponent)<br>
 [保持组件纯净](https://beta.reactjs.org/learn/keeping-components-pure)<br>
 纯组件不依赖或修改其范围之外的变量状态，而是依赖当前函数的作用域。<br>在 JavaScript
-中对于纯函数的定义为，纯组件对于特定的输入参数，总是油特定的输出，输出完全依赖于输入参数，而不依赖其他外部变量。
+中对于纯函数的定义为，纯组件对于特定的输入参数，总是有特定的输出，输出完全依赖于输入参数，而不依赖其他外部变量。
 
 React 中 Pure Component 支持所有 Component API，继承 Pure Component 相当于定义一个自定义 `shouldComponentUpdate` 方法，浅层比较
 props 和 state
